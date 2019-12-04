@@ -77,7 +77,7 @@ int main() {
 
   std::ofstream outfile;
 
-  outfile.open("test.txt", std::ios_base::app); // append instead of overwrite
+  outfile.open("packing_density.txt", std::ios_base::app); // append instead of overwrite
   outfile << "tess_area = " << tess_area << " grain area = " << g_area
           << " package density= " << density << "\n";
   outfile.close();
