@@ -65,7 +65,7 @@ int main() {
       dy = (next->second) - (m->second);
       length = std::pow((dx * dx + dy * dy), 0.5);
       if (length > 4 * radius[n]) {
-        g_area - =M_PI * std::pow(radius[n], 2);
+        g_area = g_area -M_PI * std::pow(radius[n], 2);
         area = 0;
         break;
       }
