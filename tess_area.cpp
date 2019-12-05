@@ -33,7 +33,7 @@ int main() {
           std::make_pair(ignored, std::make_pair(vertice_x, vertice_y)));
       j++;
     }
-  while (inR.read_row(radi)) radius.emplace_back(radi);
+  while (inR.read_row(radi)) {radius.emplace_back(radi);g_area += M_PI * std::pow(radi, 2);}
   // try to keep i the same as cell, once the value of cell exceeds i, which
   // means it is a new cell, i++, and store vertices of the previous cell into
   // Vert; and flush the Vert;
@@ -51,6 +51,7 @@ int main() {
       }
     }
   }
+
   // because only when cell>i the vertices can be stored, the vertices of the
   // last cell should be inserted after the while loop.
   connects.insert(std::make_pair(i, Vert));
@@ -64,12 +65,12 @@ int main() {
       dy = (next->second) - (m->second);
       length = std::pow((dx * dx + dy * dy), 0.5);
       if (length > 4 * radius[n]) {
+        g_area - =M_PI * std::pow(radius[n], 2);
         area = 0;
         break;
       }
       area += ((m->first) * (next->second)) - ((next->first) * (m->second));
     }
-    g_area += M_PI * std::pow(radius[n], 2);
     tess_area += std::fabs(area) / 2;
   }
   void_area += tess_area - g_area;
