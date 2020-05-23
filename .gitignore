@@ -1,9 +1,12 @@
 *#*
 *~*
 *._*
-*.dat
+*.dat.txt
 a.out
 *.DS_Store
 table
 tess_area
 1dens_stats.txt
+Degree.data
+Vertices.data
+Connectivity.data
